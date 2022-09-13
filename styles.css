@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+
+
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+input[type='email'] {
+  padding: 10px;
+  border-radius: 5px;
+
+  width: 250px;
+}
+
+.picture {
+  width: calc(100vw / 2);
+  background-image: url(./sidepic_.jpg);
+  background-size: cover;
+}
+
+.title {
+  padding: 40px;
+  padding-left: 10px;
+  background-color: lightblue;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw / 2);
+  background-color: linen;
+}
+
+.name,
+.contact,
+.authentication {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 10px;
+}
+
+label {
+  display: block;
+}
