@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="picture">
+    <p>Photo by <a href="https://unsplash.com/@kirillz">Kirill </a>on <a href="https://unsplash.com">Unsplash</a></p>
   </div>
   <div class="form-container">
     <div class="title">
@@ -16,38 +17,46 @@
       <h2>You know you want to.</h2>
     </div>
     <form action="" method="get">
+      <div class="input-field">
+        <div class="form-row">
+          <p>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="name" required>
+          </p>
+          <p>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name">
+          </p>
+        </div>
 
-      <div class="name">
-        <p class="form-input">
-          <label for="first-name">First Name</label>
-          <input type="text" id="first-name" name="name">
-        </p>
-        <p class="form-input">
-          <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" name="last-name">
-        </p>
+        <div class="form-row">
+          <p>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required 
+                   pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                   title="Invalid email address">
+          </p>
+          <p>
+            <label for="telnum">Phone Number</label>
+            <input type="tel" name="tel" id="telnum" maxlength="10" required>
+          </p>
+        </div>
+        
+        <div class="form-row">
+          <p>
+            <label for="pass">Password</label>
+            <input type="password" name="password" id="pwd" required>
+          </p>
+          <p>
+            <label for="confirm-pass">Confirm Password</label>
+            <input type="password" name="confirm-pass" id="confirm-pass" required>
+          </p>
+        </div>
+        <div id="error-text"></div>
       </div>
-
-      <div class="contact">
-        <p class="form-contact">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email">
-        </p>
-        <p>
-          <label for="telnum">Phone Number</label>
-          <input type="tel" name="tel" id="telnum">
-        </p>
-      </div>
-      
-      <div class="authentication">
-        <p class="pwd">
-          <label for="pass">Password</label>
-          <input type="password" name="password" id="pwd">
-        </p>
-        <p class="pwd">
-          <label for="confirm-pass">Confirm Password</label>
-          <input type="password" name="confirm-pass" id="confirm-pass">
-        </p>
+      <div class="create">
+        <button type="submit">Create Account</button>
+        <p>Already have an account? <em>Log in</em></p>
       </div>
     </form>
   </div>
