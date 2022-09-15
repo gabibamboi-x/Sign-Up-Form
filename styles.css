@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'baumans';
+  src: url(./Fonts/baumans/Baumans-Regular.ttf);
+}
+
 body {
   display: flex;
-  height: 100vh;
   margin: 0;
+  height: 100vh;
+  flex: 1;
+  font-family: baumans;
+  overflow: hidden;
 }
 
 .picture {
@@ -10,13 +18,29 @@ body {
   background-size: cover;
   background-position: center;
   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   text-align: center;
-  padding-top: calc(100vh - 40px);
+}
+
+.odin {
+  margin-top: calc(100vh / 7);
+  background-color: rgba(0, 0, 0, .5);
+}
+
+img {
+  padding: 10px;
+  width: 350px;
 }
 
 .title {
   padding: 40px;
   padding-left: 10px;
+  margin-bottom: -40px;
+
+  font-size: smaller;
 }
 
 
@@ -32,23 +56,29 @@ input[type='email'] {
   width: calc(25vw - 40px);
 }
 
-input:focus{
+input:focus {
   outline: none;
-  border: 1px solid gray;
+  box-shadow: 2px 2px 2px cadetblue;
 }
 
-.error {
+input:valid {
+  border: 1px solid rgb(21, 189, 21);
+}
+
+input:focus:invalid {
   border: 1px solid red;
 }
 
 #error-text {
-  padding-left: .9rem;
-  margin-top: -15px;
+  padding-left: 1.25rem;
+  margin-top: -10px;
   height: 15px;
   padding-bottom: 20px;
+  color: red;
 }
 
 .form-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,14 +87,14 @@ input:focus{
 
 * .form-row {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
-  padding-inline: .9rem;
+  padding-inline: 1.25rem;
 }
 
 label {
   display: block;
   padding-block: 2px;
+  font-style: oblique;
 }
 
 .input-field {
@@ -72,19 +102,88 @@ label {
 }
 
 .create {
-  margin-top: 30px;
-  padding-left: .9rem;
+  margin-top: 25px;
+  padding-left: 1.25rem;
+  padding-bottom: 50px;
 }
 
 button {
+  margin: 10px;
+  margin-left: 0%;
   padding: 10px;
   padding-inline: 15px;
 
-  background-color: lightgreen;
+  background-color: cadetblue;
   border-radius: 6px;
-  border: .5px solid black;
+  border: none;
 }
 
 a {
   color: #000;
+}
+
+
+
+
+@media screen and (max-width: 780px) {
+  body {
+    display: block;
+    overflow: auto;
+  }
+
+  .picture {
+    width: 100vw;
+    padding-block: 100px;
+    font-size: 0px;
+    margin: 0;
+  }
+
+  .odin {
+    margin: 0%;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .title {
+    text-align: center;
+    margin-block: -30px;
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='tel'],
+  input[type='email'] {
+    padding-block: 10px;
+    width: calc(100vw - 100px);
+  }
+
+  .form-container {
+    display: block;
+    width: 100vw;
+  }
+  
+  * .form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    display: block;
+    padding-block: 2px;
+    padding-inline: 5px;
+  }
+
+  .create {
+    padding-top: 20px;
+    text-align: center;
+    display: block;
+  }
+
+  button {
+    padding: 10px;
+    padding-inline: 45px;
+    border-radius: 8px;
+    font-size: 20px;
+  }
 }
