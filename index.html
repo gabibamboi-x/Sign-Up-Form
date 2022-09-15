@@ -5,27 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>JDM Oldies</title>
+  <script src="./script.js" defer></script>
+  <title>Odin Air</title>
 </head>
 <body>
   <div class="picture">
-    <p>Photo by <a href="https://unsplash.com/@kirillz">Kirill </a>on <a href="https://unsplash.com">Unsplash</a></p>
+    <div class="odin"><img src="./Images/logo-no-background.png" alt="logo"></div>
+    <p id="reference">Photo by <a href="https://unsplash.com/@kirillz">Kirill </a>on <a href="https://unsplash.com">Unsplash</a></p>
   </div>
   <div class="form-container">
     <div class="title">
-      <h1>The journey begins...</h1>
-      <h2>You know you want to.</h2>
+      <h1><em>“Travel opens your heart, broadens your mind, and fills your life with stories to tell.”</em></h1>
+      <h2>Sign Up now and get two tickets at the price of one. Only at Odin Air!</h2>
+      <h2>You know you want to!</h2>
     </div>
-    <form action="" method="get">
+    <form action="" method="get" onsubmit="submitForm(event)">
       <div class="input-field">
         <div class="form-row">
           <p>
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="name" required>
+            <input type="text" id="first-name" name="name" required title="Please enter your first name">
           </p>
           <p>
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name">
+            <input type="text" id="last-name" name="last-name" required title="Please enter your last name">
           </p>
         </div>
 
@@ -38,25 +41,26 @@
           </p>
           <p>
             <label for="telnum">Phone Number</label>
-            <input type="tel" name="tel" id="telnum" maxlength="10" required>
+            <input type="tel" name="tel" id="telnum" 
+                   pattern="[0-9]{10}" required title="Enter a phone number">
           </p>
         </div>
         
         <div class="form-row">
           <p>
             <label for="pass">Password</label>
-            <input type="password" name="password" id="pwd" required>
+            <input type="password" name="password" id="pwd" required title="Enter new password">
           </p>
           <p>
             <label for="confirm-pass">Confirm Password</label>
-            <input type="password" name="confirm-pass" id="confirm-pass" required>
+            <input type="password" name="confirm-pass" id="confirm-pass" required title="Confirm your password">
           </p>
         </div>
         <div id="error-text"></div>
       </div>
       <div class="create">
-        <button type="submit">Create Account</button>
-        <p>Already have an account? <em>Log in</em></p>
+        <button id='submit' type="submit">Create Account</button>
+        <p>Already have an account? <a href="https://www.theodinproject.com/login"><em>Log in</em></a></p>
       </div>
     </form>
   </div>
