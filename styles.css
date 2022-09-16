@@ -9,7 +9,6 @@ body {
   height: 100vh;
   flex: 1;
   font-family: baumans;
-  overflow: hidden;
 }
 
 .picture {
